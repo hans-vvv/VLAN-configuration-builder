@@ -1,0 +1,32 @@
+---
+  hosts:
+    Switch1:
+      peerswitch: Switch2
+      ports:
+        PortChannel1:
+          description: Access_switch1
+        PortChannel2:
+          description: Access_switch2
+        PortChannel10:
+          description: Access_switch10
+      vrf_members: [VRF_A, VRF_B]
+
+    Switch3:
+      peerswitch: Switch4
+      ports:
+        PortChannel3:
+          description: Access_switch3
+        PortChannel4:
+          description: Access_switch4
+      vrf_members: [VRF_C, VRF_D]
+
+  network:
+    vrf:
+      VRF_A:
+        ip_helpers: [1.1.1.1, 1.1.1.2]
+      VRF_B:
+        ip_helpers: [2.2.2.1, 2.2.2.2]
+      VRF_C:
+        ip_helpers: [ 3.3.3.1, 3.3.3.2 ]
+      VRF_D:
+        ip_helpers: [ 4.4.4.1, 4.4.4.2 ]

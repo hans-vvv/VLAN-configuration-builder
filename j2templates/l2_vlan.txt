@@ -1,0 +1,8 @@
+vlan {{vlan_id}}
+{% if vlan_name %}
+ name {{vlan_name}}
+{% endif %}
+{% for port in l2_downlinks %}
+interface {{port}}
+ switchport trunk allowed vlan add {{vlan_id}}
+{% endfor %}

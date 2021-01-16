@@ -1,0 +1,13 @@
+interface vlan{{vlan_id}}
+ ip address {{vlan_ip}} {{vlan_mask}}
+ ip vrf forwarding {{vrf}}
+ standby 1 ip {{hsrp_address}}
+{% if hsrp_state  == 'active' %}
+ standby 1 priority 100
+{% else %}
+ standby 1 priority 90
+{% endif %}
+{% for helper in helpers %}
+ ip helper-address {{helper}}
+{% endfor %}
+
