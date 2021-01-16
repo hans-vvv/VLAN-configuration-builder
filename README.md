@@ -1,6 +1,6 @@
 # VLAN configuration builder
  
-This script generates Cisco IOS configurations for a couple of distribution switches. It was impossible for me to build this GUI without this excellent resource:
+This script generates Cisco IOS configurations for a couple of distribution switches. It would have been impossible for me to build this GUI without this excellent resource:
 
 https://subscription.packtpub.com/book/application_development/9781788835886
 
